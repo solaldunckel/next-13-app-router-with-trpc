@@ -1,0 +1,32 @@
+{
+  "name": "test-app-router",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "packages/config/*",
+    "packages/@trpc/next-layout"
+  ],
+  "scripts": {
+    "postinstall": "manypkg check && patch-package",
+    "build": "turbo build",
+    "dev": "turbo dev --parallel",
+    "start": "turbo start",
+    "db:generate": "turbo db:generate",
+    "db:push": "turbo db:push db:generate",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@manypkg/cli": "^0.20.0",
+    "eslint-config-custom": "*",
+    "patch-package": "^6.5.1",
+    "prettier": "latest",
+    "turbo": "latest"
+  },
+  "packageManager": "yarn@1.22.19"
+}

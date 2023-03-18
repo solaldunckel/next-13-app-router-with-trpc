@@ -1,0 +1,19 @@
+{
+  "name": "@trpc/next-layout",
+  "version": "0.1.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "license": "MIT",
+  "dependencies": {
+    "@tanstack/react-query": "4.26.1",
+    "@trpc/client": "^10.16.0",
+    "@trpc/react-query": "^10.16.0",
+    "@trpc/server": "^10.16.0",
+    "next": "^13.2.4",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@acme/tsconfig": "*",
+    "typescript": "^4.9.5"
+  }
+}

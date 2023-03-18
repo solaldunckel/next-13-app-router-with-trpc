@@ -1,0 +1,4 @@
+{
+  "extends": "@acme/tsconfig/nextjs.json",
+  "include": ["server", "client"]
+}
