@@ -16,14 +16,14 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@planetscale/database": "^1.6.0",
-    "kysely": "^0.23.5",
+    "@planetscale/database": "^1.7.0",
+    "kysely": "^0.24.2",
     "kysely-planetscale": "^1.3.0"
   },
   "devDependencies": {
-    "dotenv-cli": "^7.0.0",
-    "prisma": "^4.11.0",
-    "prisma-kysely": "^1.0.7",
-    "typescript": "^4.9.5"
+    "dotenv-cli": "^7.2.1",
+    "prisma": "^4.12.0",
+    "prisma-kysely": "^1.1.0",
+    "typescript": "^5.0.3"
   }
 }

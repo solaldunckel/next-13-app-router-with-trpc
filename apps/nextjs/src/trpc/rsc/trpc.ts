@@ -3,6 +3,7 @@ import { createContextInner } from "@acme/api/src/context";
 import { auth as getAuth } from "@clerk/nextjs/app-beta";
 import superjson from "superjson";
 import { createTRPCNextLayout } from "@trpc/next-layout/server";
+import "server-only";
 
 export const trpcRsc = createTRPCNextLayout({
   router: appRouter,

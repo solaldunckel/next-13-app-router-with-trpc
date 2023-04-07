@@ -8,7 +8,8 @@ import type {
   CreateTRPCReactQueryClientConfig,
   DecoratedProcedureRecord,
 } from "@trpc/react-query/shared";
-import { useState } from "react";
+import { createReactQueryUtilsProxy } from "@trpc/react-query/shared";
+import { useMemo, useState } from "react";
 import { QueryClientProvider } from "@tanstack/react-query";
 import {
   createHooksInternal,
@@ -71,6 +72,16 @@ export function createTRPCNextBeta<TRouter extends AnyRouter, TFlags = null>(
   };
 
   return createFlatProxy((key) => {
+    if (key === "useContext") {
+      return () => {
+        const context = trpc.useContext();
+        // create a stable reference of the utils context
+        return useMemo(() => {
+          return (createReactQueryUtilsProxy as any)(context);
+        }, [context]);
+      };
+    }
+
     if (key === "Provider") {
       return TRPCProvider;
     }
